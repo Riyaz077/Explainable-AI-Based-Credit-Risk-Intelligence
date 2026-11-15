@@ -137,8 +137,7 @@ Credit decisions can materially affect people's lives. Do not use protected attr
 The current version uses synthetic data, a simplified target-generation process, baseline models, and heuristic reason codes. Future extensions may include independently validated real-world datasets, calibration, temporal validation, fairness metrics, model monitoring, SHAP explanations, secure authentication, and governed lending-system integration.
 
 ## Author
-**Mohamed Riyaz S.**  
-Computer Science & Engineering | Business Analytics
 
-## License
-MIT. See `LICENSE`.
+**Mohamed Riyaz S.**  
+Integrated M.Tech, Computer Science and Engineering (Business Analytics)  
+VIT Chennai
