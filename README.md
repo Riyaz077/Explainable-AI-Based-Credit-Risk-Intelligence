@@ -3,8 +3,6 @@
 
 CreditGuard is an end-to-end machine learning demonstrator for assessing loan default risk, estimating default probabilities, explaining model outputs, and supporting consistent credit-review workflows. It includes a reproducible training pipeline, synthetic loan dataset, Streamlit dashboard, FastAPI prediction endpoint, and model evaluation utilities.
 
-> **Important:** The included dataset is synthetic and created for demonstration. This project is not a production credit-scoring system and must not be used to make real lending decisions without extensive validation, legal review, fairness testing, and human oversight.
-
 ## Features
 - Loan default probability prediction using supervised machine learning.
 - Risk-band assignment: Low, Medium, and High.
@@ -71,51 +69,34 @@ CreditGuard/
 └── pyproject.toml
 ```
 
-## Quick start
-```bash
-python -m venv .venv
-# Windows PowerShell
-.venv\Scripts\Activate.ps1
-# macOS/Linux
-source .venv/bin/activate
+## **Quick Start**
 
-pip install -r requirements.txt
-python scripts/generate_data.py
-python scripts/run_pipeline.py
-```
+- Set up and activate a Python virtual environment.
+- Install all project dependencies using `requirements.txt`.
+- Generate the sample dataset using the data generation script.
+- Execute the end-to-end pipeline for data preprocessing and model training.
+- Launch the interactive Streamlit dashboard for analytics and visualization.
+- Start the FastAPI backend to access prediction services.
+- Explore available API endpoints through the interactive Swagger documentation.
+- Run automated tests using `pytest` to verify project functionality.
 
-Launch the dashboard:
-```bash
-streamlit run dashboard/app.py
-```
+## **API Usage – Loan Risk Prediction**
 
-Launch the API:
-```bash
-uvicorn api.main:app --reload
-```
-API docs: `http://127.0.0.1:8000/docs`
+The `/predict` API endpoint accepts a POST request containing financial, credit, and employment-related information to evaluate loan risk and generate predictive insights.
 
-Run tests:
-```bash
-pytest -q
-```
+**Key input parameters:**
 
-## Example API request
-`POST /predict`
-```json
-{
-  "annual_income": 65000,
-  "loan_amount": 18000,
-  "loan_term_months": 36,
-  "interest_rate": 10.5,
-  "credit_score": 710,
-  "debt_to_income": 0.28,
-  "employment_years": 5,
-  "delinquencies": 0,
-  "credit_utilization": 0.32,
-  "loan_purpose": "personal"
-}
-```
+- **Financial Details:** Annual income, loan amount, loan term, and interest rate.
+- **Credit Profile:** Credit score, debt-to-income ratio, credit utilization, and previous delinquencies.
+- **Employment Details:** Employment duration in years.
+- **Loan Information:** Loan purpose and borrowing requirements.
+
+**Expected output:**
+
+- Predicted loan risk classification.
+- Estimated probability of default.
+- Creditworthiness assessment.
+- Risk-based lending insights and recommendations.
 
 ## Methodology
 1. Generate or load loan application records.
